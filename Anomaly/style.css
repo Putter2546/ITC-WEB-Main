@@ -1,0 +1,92 @@
+h3, .story{
+    color: green;
+    font-family: "Noto Sans Thai", sans-serif;
+}
+
+hr{
+    color: green;
+}
+
+form{
+    color: white;
+    font-family: "Noto Sans Thai", sans-serif;
+}
+
+  .card {
+    background-color: #1f1f1f;
+    color: white;
+    border: 1px solid #333;
+    transition: transform 0.2s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+    border-color: green;
+  }
+
+  .card a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .card a:hover {
+    color: green;
+  }
+
+  .card-title{
+    font-size: 1rem;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+  body {
+      height: 100vh;
+      overflow: hidden;
+      background-color: #000;
+      display: flex;
+  }
+  
+  h1 {
+      color: green;
+      font-family: 'Share Tech Mono', 'Cascadia Code', Menlo, Monaco, 'Courier New', monospace;
+      font-size: 3rem;
+      filter: drop-shadow(0px 0px 5px currentColor);
+      
+      &::after {
+          content: '';
+          display: inline-block;
+          width: .2em;
+          height: .7em;
+          background-color: currentColor;
+          margin-left: .1em;
+          animation: blink 1s linear infinite forwards;
+          vertical-align: baseline;
+      }
+  }
+  
+  @keyframes blink {
+      0% {
+          visibility: visible;
+      }
+      
+      50% {
+          visibility: visible;
+      }
+      
+      51% {
+          visibility: hidden;
+      }
+      
+      100% {
+          visibility: hidden;
+      }
+  }
+
+  img {
+    width: 80%;  /* กำหนดความกว้างของรูปภาพ */
+    height: auto;  /* ความสูงจะปรับอัตโนมัติตามสัดส่วน */
+  }
+
+.optional{
+  color: white;
+}

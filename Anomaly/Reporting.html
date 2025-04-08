@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anomalies Detection Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container p-4">
+    <h1 class="text-center p-3">Anomalies Detection Report [ADR.]</h1>
+    <div>
+        <h3>REPORTING FORM</h3>
+        <p class="story">CASE: FLOWER ENCYCLOPEDIA</p><hr>
+      </div>
+      <div>
+        <form onsubmit="submitReport(event)">
+            <p>เลือกข้อความที่ถูกต้องเท่านั้น</p>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="home" id="checkHome">
+                        <label class="form-check-label" for="checkHome">
+                          มีหน้าเว็บไซต์ไม่ครบทั้ง 4 หน้า (2 Flower Page, Comment Page, Login)
+                        </label>
+                      </div>
+
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="gallery" id="checkDetailNormal">
+                        <label class="form-check-label" for="checkGallery">
+                            รายละเอียดของดอกไม้มีข้อผิดพลาดไปในโหมดธรรมดา
+                        </label>
+                      </div>
+              
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="gallery" id="checkDetailDark">
+                        <label class="form-check-label" for="checkGallery">
+                            รายละเอียดของดอกไม้มีข้อผิดพลาดไปในโหมดมืด
+                        </label>
+                      </div>
+              
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="about" id="checkDetailSpecial">
+                        <label class="form-check-label" for="checkAbout">
+                          รายละเอียดของดอกไม้มีข้อผิดพลาดไปในโหมดพิเศษ
+                        </label>
+                      </div>
+              
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="contact" id="checkImageNormal">
+                        <label class="form-check-label" for="checkContact">
+                          รูปของดอกไม้มีความผิดปกติในโหมดธรรมดา
+                        </label>
+                      </div>
+          
+                      <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" value="home" id="checkImageDark">
+                          <label class="form-check-label" for="checkHome">
+                            รูปของดอกไม้มีความผิดปกติในโหมดมืด
+                          </label>
+                        </div>
+                
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" value="gallery" id="checkImageSpecial">
+                          <label class="form-check-label" for="checkGallery">
+                            รูปของดอกไม้มีความผิดปกติในโหมดพิเศษ
+                          </label>
+                        </div>
+                
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" value="about" id="checkURLHome">
+                          <label class="form-check-label" for="checkAbout">
+                            ในหน้าแรกมี URL ต่อท้ายที่ผิดปกติ
+                          </label>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="about" id="checkURLSecond">
+                            <label class="form-check-label" for="checkAbout">
+                              ในหน้าที่สองมี URL ต่อท้ายที่ผิดปกติ
+                            </label>
+                          </div>
+                </div>
+                
+                <div class="col">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="home" id="checkTotal">
+                        <label class="form-check-label" for="checkHome">
+                            รายชื่อดอกไม้ปรากฎไม่ครบทั้งหมด 60 ชนิด
+                        </label>
+                      </div>
+              
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="gallery" id="checkTitle">
+                        <label class="form-check-label" for="checkGallery">
+                          ชื่อไฟล์ของรูปดอกไม้มีการระบุชื่อซ้ำกัน (ไม่นับนามสกุล)
+                        </label>
+                      </div>
+              
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="about" id="checkSpecialtoDark">
+                        <label class="form-check-label" for="checkAbout">
+                          สามารถเข้าสู่โหมดกลางคืนได้เมื่ออยู่ในโหมดพิเศษ
+                        </label>
+                      </div>
+              
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="contact" id="checkDarktoSpecial">
+                        <label class="form-check-label" for="checkContact">
+                            สามารถเข้าสู่โหมดพิเศษได้เมื่ออยู่ในโหมดกลางคืน
+                        </label>
+                      </div>
+          
+                      <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" value="home" id="checkAccess">
+                          <label class="form-check-label" for="checkHome">
+                            สามารถเข้าถึงโหมดการแก้ไขได้โดยไม่ต้องล็อกอิน
+                          </label>
+                        </div>
+                
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" value="gallery" id="checkComment">
+                          <label class="form-check-label" for="checkGallery">
+                            มี comment ที่ไม่สามารถโหลดข้อความขึ้นมาแสดงได้
+                          </label>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="gallery" id="checkGood" disabled>
+                            <label class="form-check-label" for="checkGallery">
+                              รหัส FLAG 04 คือ Tl61QkrRlmsQhSzLAr8mZQ== (blowfish,CBC,B64)
+                            </label>
+                          </div>
+                
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" value="about" id="checkSortedbHome">
+                          <label class="form-check-label" for="checkAbout">
+                            ในหน้าแรกฟังก์ชั่นการเรียงลำดับใช้งานไม่ได้
+                          </label>
+                        </div>
+                
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" value="contact" id="checkSortedbSecond">
+                          <label class="form-check-label" for="checkContact">
+                            ในหน้าที่สองฟังก์ชั่นการเรียงลำดับใช้งานไม่ได้
+                          </label>
+                        </div>
+                    
+                </div>
+            </div>
+    
+            <button type="submit" class="btn btn-primary">ส่งรายงาน</button>
+          </form>
+      </div>
+  </div>
+  <script src="form.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
